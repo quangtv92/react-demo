@@ -1,10 +1,12 @@
 import React from 'react'
 import { render } from 'react-dom'
 
-class App extends React.Component {
+class Index extends React.Component {
   render() {
     return (
-      <div>My App</div>
+      <div>My App hehe</div>
     )
   }
 }
+
+ReactDOM.render(<Index />, document.getElementById("app"));

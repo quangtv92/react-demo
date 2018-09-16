@@ -13,8 +13,8 @@ const rootDir = path.resolve(__dirname, './')
 module.exports = {
   watch: true,
   output: {
-    path: path.join(rootDir, 'build/assets'),
-    publicPath: '/assets/',
+    path: path.join(rootDir, 'build'),
+    publicPath: '/',
     filename: 'js/[name].[hash:5].js'
   },
   module: {
@@ -38,7 +38,22 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"]
+        use: [
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              importLoader: 1,
+              localIdentName: '[name]_[local]_[hash:base64]',
+              sourceMap: true,
+              minimize: true
+            }
+          }
+
+        ]
       }
     ]
   },
