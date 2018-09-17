@@ -1,4 +1,4 @@
-import React, { PropTypes, Component } from 'react'
+import React, { Component, Fragments, PropTypes  } from 'react'
 
 //Stateful component
 
@@ -12,12 +12,16 @@ import React, { PropTypes, Component } from 'react'
 
 //Stateless component
 
-// Đoạn này Message được truyền vào 1 props. ở đây ta chỉ cần name nên sẽ lấy mình name
+// props are input variable, we need destruct the name on props
 const Message = ({
-  name
+  name,
+  range
 }) => {
   return (
-    <div>Hello { name }</div>
+    <div>
+      <div>Hello { name }</div>
+      <div>Your range is { range }</div>
+    </div>
   )
 }
 

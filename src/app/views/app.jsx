@@ -15,13 +15,29 @@ const Index = () => {
 
 
 class App extends React.Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      name: 'React',
+      range: 0
+    }
+  }
+
+  onChange(e) {
+    this.setState({ range: e.target.value })
+  }
+
   render() {
-    let props = this.props;
 
     return (
-      <div className={ styles.title } {...props}>
-        <span>Hello world</span>
-        <Message name='Duyệt' />
+      <div >
+
+        <input type='range' name='Fragments' onChange={ this.onChange.bind(this) } />
+        <Message
+          name={ this.state.name }
+          range={ this.state.range }
+        />
       </div>
     )
   }
