@@ -1,4 +1,5 @@
-import React, { Component, Fragments, PropTypes  } from 'react'
+import React, { Component, Fragments, PropTypes } from 'react'
+import styled from 'styled-components'
 
 //Stateful component
 
@@ -13,15 +14,35 @@ import React, { Component, Fragments, PropTypes  } from 'react'
 //Stateless component
 
 // props are input variable, we need destruct the name on props
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  background-color: aquamarine;
+`
+
+const Slider = styled.div`
+  width: ${
+    ({ range }) => `${ range }%`
+  }
+  border: 1px solid red;
+  height: 1px;
+
+`
+
 const Message = ({
   name,
   range
 }) => {
   return (
-    <div>
-      <div>Hello { name }</div>
-      <div>Your range is { range }</div>
-    </div>
+    <Wrapper>
+      <Slider
+        range={ range }
+        initialValues ={ range }
+      />
+      <span>Hello { name }</span>
+      <span>Your range is { range }</span>
+    </Wrapper>
   )
 }
 

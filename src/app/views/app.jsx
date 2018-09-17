@@ -1,8 +1,14 @@
 import React from "react";
-
-import styles from './style.css'
+import styled from 'styled-components'
 
 import Message from './messenge'
+
+const Range = styled.input.attrs({
+  type: 'range'
+})`
+  display: block;
+  width: 100%;
+`
 
 //Render props
 const Index = () => {
@@ -20,7 +26,7 @@ class App extends React.Component {
 
     this.state = {
       name: 'React',
-      range: 0
+      range: 20
     }
   }
 
@@ -33,7 +39,14 @@ class App extends React.Component {
     return (
       <div >
 
-        <input type='range' name='Fragments' onChange={ this.onChange.bind(this) } />
+        <Range
+          type="range"
+          name="range"
+          min="0"
+          max="100"
+          value={ this.state.range }
+          onChange={ this.onChange.bind(this) }
+        />
         <Message
           name={ this.state.name }
           range={ this.state.range }
