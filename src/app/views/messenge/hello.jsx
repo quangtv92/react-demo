@@ -1,4 +1,4 @@
-import React, { Component, Fragments, PropTypes } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
 //Stateful component
@@ -38,7 +38,7 @@ const Message = ({
     <Wrapper>
       <Slider
         range={ range }
-        initialValues ={ range }
+        initialValues={ range }
       />
       <span>Hello { name }</span>
       <span>Your range is { range }</span>

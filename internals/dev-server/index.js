@@ -6,11 +6,11 @@ import webpackHotMiddleware from 'webpack-hot-middleware'
 
 import webpackConfig from '../webpack/webpack.dev.babel'
 
-const app = express();
-const port = 3000;
+const app = express()
+const port = 3000
 let started = false
 
-const compiler = webpack(webpackConfig);
+const compiler = webpack(webpackConfig)
 
 app.use(
   webpackDevMiddleware(compiler, {
@@ -33,7 +33,7 @@ app.use('*', (req, res, next) => {
       return next(err)
     }
     res
-      .set('content-type','text/html')
+      .set('content-type', 'text/html')
       .send(result)
       .end()
   })

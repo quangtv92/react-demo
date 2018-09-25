@@ -1,5 +1,5 @@
 import path from 'path'
-import webpack from 'webpack'
+// import webpack from 'webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
 
@@ -16,7 +16,7 @@ export default({
   resolve
 }) => {
   return {
-    mode: mode,
+    mode,
     entry: { ...entry },
     output: {
       path: path.join(rootDir, 'build'),
@@ -38,7 +38,7 @@ export default({
           test: /\.jsx?$/,
           exclude: /node_modules/,
           use: {
-            loader: "babel-loader",
+            loader: 'babel-loader',
             options: {
               presets: [
                 [ 'env', {

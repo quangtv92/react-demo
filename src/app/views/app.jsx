@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from 'react'
 import styled from 'styled-components'
 
 import Message from './messenge'
@@ -11,13 +11,13 @@ const Range = styled.input.attrs({
 `
 
 //Render props
-const Index = () => {
-  return (
-    <div className={ styles.title }>
-      <span>Hello world!</span>
-    </div>
-  )
-}
+// const Index = () => {
+//   return (
+//     <div className={ styles.title }>
+//       <span>Hello world!</span>
+//     </div>
+//   )
+// }
 
 
 class App extends React.Component {
@@ -35,10 +35,8 @@ class App extends React.Component {
   }
 
   render() {
-
     return (
-      <div >
-
+      <Fragment>
         <Range
           type="range"
           name="range"
@@ -51,7 +49,7 @@ class App extends React.Component {
           name={ this.state.name }
           range={ this.state.range }
         />
-      </div>
+      </Fragment>
     )
   }
 }
